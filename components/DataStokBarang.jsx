@@ -11,30 +11,24 @@ export default function DataStokBarang() {
                 <table className="mt-4">
                     <tr>
                         <th className="bg-[#285430] text-white">NO</th>
-                        <th className="bg-[#285430] text-white">Nama Pembeli</th>
-                        <th className="bg-[#285430] text-white">Tanggal</th>
-                        <th className="bg-[#285430] text-white">Produk</th>
-                        <th className="bg-[#285430] text-white">Jumlah</th>
-                        <th className="bg-[#285430] text-white">Total</th>
+                        <th className="bg-[#285430] text-white">Nama Produk</th>
+                        <th className="bg-[#285430] text-white">Stok</th>
                         <th className="bg-[#285430] text-white">Tindakan</th>
+
                     </tr>
                     <tr className="odd:bg-slate-200">
                         <td>asdsa</td>
                         <td>asdsa</td>
                         <td>asdsa</td>
                         <td>asdsa</td>
-                        <td>asdsa</td>
-                        <td>asdsa</td>
-                        <td>asdasm</td>
+
                     </tr>
                     <tr className="odd:bg-slate-200">
                         <td>asdsa</td>
                         <td>asdsa</td>
                         <td>asdsa</td>
                         <td>asdsa</td>
-                        <td>asdsa</td>
-                        <td>asdsa</td>
-                        <td>asdasm</td>
+
                     </tr>
                 </table>
             </div>
