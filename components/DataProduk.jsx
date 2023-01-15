@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 export default function DataProduk() {
     const [dataProduk, setDataProduk] = useState([]);
-
     useEffect(() => {
         async function fetchApi() {
             const req = await axios({
@@ -37,7 +36,7 @@ export default function DataProduk() {
                         let stokBarang = data.ketersedian_barang
                         return (
                             <tr key={index} className="odd:bg-slate-200">
-                                <td>{index + 1}</td>
+                                <td className="w-24">{index + 1}</td>
                                 <td>{namaProduk}</td>
                                 <td>{stokBarang}</td>
                                 <td>asdsa</td>
