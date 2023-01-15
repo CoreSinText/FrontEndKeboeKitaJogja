@@ -11,25 +11,14 @@ export default function TambahProduk() {
 
                     <form action="" className="flex flex-col p-5 space-y-5 w-full">
                         <div className="flex space-x-6 items-center w-full">
-                            <h2 className="text-white w-36 ">Nama Pembeli</h2>
-                            <input type="text" name="" placeholder="Nama Pembeli" className="py-2 rounded-lg px-4 w-72" />
+                            <h2 className="text-white w-36 ">Nama Produk</h2>
+                            <input type="text" name="" placeholder="Nama Produk" className="py-2 rounded-lg px-4 w-72" />
                         </div>
 
-                        <div className="flex space-x-6 items-center w-full">
-                            <h2 className="text-white w-36">Nama Produk</h2>
-                            <select className="py-2 rounded-lg px-4 w-72">
-                                <option value="">asdas</option>
-                            </select>
-                        </div>
 
                         <div className="flex space-x-6 items-center w-full">
-                            <h2 className="text-white w-36">Jumlah</h2>
-                            <input type="text" name="" placeholder="Jumlah" className="py-2 rounded-lg px-4 w-72" />
-                        </div>
-
-                        <div className="flex space-x-6 items-center w-full">
-                            <h2 className="text-white w-36">Nama Pembeli</h2>
-                            <input type="text" name="" placeholder="Nama Pembeli" className="py-2 rounded-lg px-4 w-72" />
+                            <h2 className="text-white w-36">Nama Harga</h2>
+                            <input type="text" name="" placeholder="Harga" className="py-2 rounded-lg px-4 w-72" />
                         </div>
 
                     </form>

@@ -10,10 +10,6 @@ export default function TambahStokBarang() {
                 <div className="mt-4 bg-[#285430] rounded-lg w-[770px] h-[413px] mx-auto flex flex-col justify-evenly">
 
                     <form action="" className="flex flex-col p-5 space-y-5 w-full">
-                        <div className="flex space-x-6 items-center w-full">
-                            <h2 className="text-white w-36 ">Nama Pembeli</h2>
-                            <input type="text" name="" placeholder="Nama Pembeli" className="py-2 rounded-lg px-4 w-72" />
-                        </div>
 
                         <div className="flex space-x-6 items-center w-full">
                             <h2 className="text-white w-36">Nama Produk</h2>
@@ -23,14 +19,10 @@ export default function TambahStokBarang() {
                         </div>
 
                         <div className="flex space-x-6 items-center w-full">
-                            <h2 className="text-white w-36">Jumlah</h2>
+                            <h2 className="text-white w-36">Tambah Barang</h2>
                             <input type="text" name="" placeholder="Jumlah" className="py-2 rounded-lg px-4 w-72" />
                         </div>
 
-                        <div className="flex space-x-6 items-center w-full">
-                            <h2 className="text-white w-36">Nama Pembeli</h2>
-                            <input type="text" name="" placeholder="Nama Pembeli" className="py-2 rounded-lg px-4 w-72" />
-                        </div>
 
                     </form>
                     <button className="bg-[#68B984] px-7 py-3 w-fit rounded-lg text-white self-end mx-10">Simpan</button>
