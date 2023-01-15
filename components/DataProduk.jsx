@@ -8,7 +8,7 @@ export default function DataProduk() {
         async function fetchApi() {
             const req = await axios({
                 method: "get",
-                url: "http://localhost:8000/stokbarang"
+                url: "http://localhost:8000/produk"
             })
 
             setDataProduk(req.data)
@@ -33,25 +33,17 @@ export default function DataProduk() {
                     </tr>
                     {dataProduk.map((data, index) => {
                         let namaProduk = data.nama_produk
-                        let stokBarang = data.ketersedian_barang
+                        let hargaProduk = data.harga_produk
+                        let key = data.produk_id
                         return (
-                            <tr key={index} className="odd:bg-slate-200">
+                            <tr key={key} className="odd:bg-slate-200">
                                 <td className="w-24">{index + 1}</td>
                                 <td>{namaProduk}</td>
-                                <td>{stokBarang}</td>
-                                <td>asdsa</td>
-
+                                <td>{hargaProduk}</td>
+                                <td></td>
                             </tr>
                         )
                     })}
-
-                    <tr className="odd:bg-slate-200">
-                        <td>asdsa</td>
-                        <td>asdsa</td>
-                        <td>asdsa</td>
-                        <td>asdsa</td>
-
-                    </tr>
                 </table>
             </div>
         </div>
