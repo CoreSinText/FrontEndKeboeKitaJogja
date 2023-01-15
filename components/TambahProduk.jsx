@@ -5,7 +5,7 @@ export default function TambahProduk() {
             <h1 className="text-2xl font-bold">Tambah Transaksi</h1>
 
             <div className="w-full flex flex-col mt-10">
-                <Link href={'/admin/transaksi'} className="bg-[#285430] text-white font-bold w-fit px-5 py-2 rounded-lg">Data Transaksi</Link>
+                <Link href={'/admin/produk'} className="bg-[#285430] text-white font-bold w-fit px-5 py-2 rounded-lg">Data Transaksi</Link>
 
                 <div className="mt-4 bg-[#285430] rounded-lg w-[770px] h-[413px] mx-auto flex flex-col justify-evenly">
 
