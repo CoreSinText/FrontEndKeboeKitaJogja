@@ -2,7 +2,7 @@ import Link from "next/link"
 export default function TambahStokBarang() {
     return (
         <div className="w-full px-10 pt-24">
-            <h1 className="text-2xl font-bold">Tambah Transaksi</h1>
+            <h1 className="text-2xl font-bold">Tambah Stok Barang</h1>
 
             <div className="w-full flex flex-col mt-10">
                 <Link href={'/admin/transaksi'} className="bg-[#285430] text-white font-bold w-fit px-5 py-2 rounded-lg">Data Transaksi</Link>
