@@ -42,7 +42,6 @@ export default function DataTransaksi() {
                         let totalTransaksi = data.total_transaksi
                         const date = new Date(tanggal)
                         const styleDate = {
-                            weekday: "long",
                             year: "numeric",
                             month: "long",
                             day: "numeric",
