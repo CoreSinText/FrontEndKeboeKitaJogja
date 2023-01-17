@@ -1,9 +1,14 @@
 import axios from "axios"
 import Link from "next/link"
 import { useEffect, useState } from "react";
+import logoDelete from '../public/delete-icon.svg'
+import logoEdit from '../public/edit-icon.svg'
+import Image from "next/image";
 
 export default function DataProduk() {
     const [dataProduk, setDataProduk] = useState([]);
+    const [produkDelete, setprodukDelete] = useState();
+
     useEffect(() => {
         async function fetchApi() {
             const req = await axios({
@@ -15,6 +20,16 @@ export default function DataProduk() {
         }
         fetchApi()
     }, [])
+
+    async function deleteProduk(key) {
+        await axios({
+            method: "delete",
+            url: "http://localhost:8000/produk/hapus",
+            data: {
+                idProduk: `${key}`
+            }
+        })
+    }
     return (
         <div className="w-full px-10 pt-24">
             <h1 className="text-2xl font-bold">Data Produk</h1>
@@ -40,7 +55,9 @@ export default function DataProduk() {
                                 <td className="w-24">{index + 1}</td>
                                 <td>{namaProduk}</td>
                                 <td>{hargaProduk}</td>
-                                <td></td>
+                                <td className="flex w-32 mx-auto justify-center">
+                                    <Image onClick={() => { deleteProduk(key) }} src={logoDelete} alt="logo-delete" className="w-8" />
+                                </td>
                             </tr>
                         )
                     })}
