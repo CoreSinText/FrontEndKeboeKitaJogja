@@ -56,7 +56,7 @@ export default function DataProduk() {
                                 <td>{namaProduk}</td>
                                 <td>{hargaProduk}</td>
                                 <td className="flex w-32 mx-auto justify-center">
-                                    <Image onClick={() => { deleteProduk(key) }} src={logoDelete} alt="logo-delete" className="w-8" />
+                                    <Image onClick={() => { deleteProduk(key) }} src={logoDelete} alt="logo-delete" className="w-8 cursor-pointer" />
                                 </td>
                             </tr>
                         )
