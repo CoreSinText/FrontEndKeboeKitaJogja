@@ -21,6 +21,18 @@ export default function DataProduk() {
         fetchApi()
     }, [])
 
+    useEffect(() => {
+        async function fetchApi() {
+            const req = await axios({
+                method: "get",
+                url: "http://localhost:8000/produk"
+            })
+
+            setDataProduk(req.data)
+        }
+        fetchApi()
+    }, [dataProduk])
+
     async function deleteProduk(key) {
         await axios({
             method: "delete",

@@ -1,9 +1,25 @@
 import axios from "axios";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import logoDelete from "../public/delete-icon.svg"
+import Image from "next/image";
 
 export default function DataTransaksi() {
     const [dataPenjualan, setdataPenjualan] = useState([]);
+    const [deleteId, setdeleteId] = useState();
+
+    useEffect(() => {
+        async function fetchApi() {
+            const req = await axios({
+                method: "get",
+                url: "http://localhost:8000/transaksi"
+            })
+
+            setdataPenjualan(req.data)
+        }
+        fetchApi()
+    }, [dataPenjualan])
+
     useEffect(() => {
         async function fetchApi() {
             const req = await axios({
@@ -15,6 +31,16 @@ export default function DataTransaksi() {
         }
         fetchApi()
     }, [])
+
+    async function deleteTransaksi(key) {
+        await axios({
+            method: "delete",
+            url: "http://localhost:8000/transaksi/hapus",
+            data: {
+                idTransaksi: `${key}`
+            }
+        })
+    }
     return (
         <div className="w-full px-10 pt-24">
             <h1 className="text-2xl font-bold">Data Transaksi</h1>
@@ -54,7 +80,9 @@ export default function DataTransaksi() {
                                 <td>{namaProduk}</td>
                                 <td>{jumlah}</td>
                                 <td>{totalTransaksi}</td>
-                                <td></td>
+                                <td className="flex justify-center">
+                                    <Image onClick={() => { deleteTransaksi(id) }} src={logoDelete} alt={'logo-delete'} className="w-8 cursor-pointer" />
+                                </td>
                             </tr>
                         )
                     })}
