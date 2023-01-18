@@ -1,5 +1,11 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import axios from "axios"
 
-export default function handler(req, res) {
-  res.status(200).json({ name: 'John Doe' })
+export async function decodeData(data) {
+  return await axios({
+    method: "post",
+    url: "http://localhost:8000/local/decode",
+    data: {
+      data: `${data}`
+    }
+  })
 }
