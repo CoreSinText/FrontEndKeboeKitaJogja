@@ -26,8 +26,8 @@ export default function PemilikLayout({ children }) {
                     <Link href={"/pemilik/stok-barang"} className='w-full bg-[#68B984] text-white px-6 text-lg py-4 font-bold'>
                         Stok Barang
                     </Link>
-                    <Link href={"/pemilik/admin"} className='w-full bg-[#68B984] text-white px-6 text-lg py-4 font-bold'>
-                        Stok Barang
+                    <Link href={"/pemilik/data-admin"} className='w-full bg-[#68B984] text-white px-6 text-lg py-4 font-bold'>
+                        Data Admin
                     </Link>
                 </div>
                 <button className="bg-[#68B984] py-2 px-12 font-bold text-lg w-fit rounded-lg mx-auto mb-7 text-white">Keluar</button>
