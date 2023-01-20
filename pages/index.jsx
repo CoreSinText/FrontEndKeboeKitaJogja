@@ -18,7 +18,11 @@ export default function Login() {
           password: `${password}`
         }
       })
-
+      if (data.data.pemilik === 0) {
+        router.push('/admin/transaksi')
+      } else if (data.data.pemilik === 1) {
+        router.push('/pemilik/data-transaksi')
+      }
       secureLocalStorage.setItem('user', data.data)
     } catch (error) {
 

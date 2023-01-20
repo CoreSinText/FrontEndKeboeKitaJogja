@@ -8,27 +8,16 @@ export default function DataTransaksi() {
     const [dataPenjualan, setdataPenjualan] = useState([]);
     const [deleteId, setdeleteId] = useState();
 
+    async function fetchApi() {
+        const req = await axios({
+            method: "get",
+            url: "http://localhost:8000/transaksi"
+        })
+
+        setdataPenjualan(req.data)
+    }
     useEffect(() => {
-        async function fetchApi() {
-            const req = await axios({
-                method: "get",
-                url: "http://localhost:8000/transaksi"
-            })
 
-            setdataPenjualan(req.data)
-        }
-        fetchApi()
-    }, [dataPenjualan])
-
-    useEffect(() => {
-        async function fetchApi() {
-            const req = await axios({
-                method: "get",
-                url: "http://localhost:8000/transaksi"
-            })
-
-            setdataPenjualan(req.data)
-        }
         fetchApi()
     }, [])
 
@@ -40,6 +29,7 @@ export default function DataTransaksi() {
                 idTransaksi: `${key}`
             }
         })
+        fetchApi()
     }
     return (
         <div className="w-full px-10 pt-24">

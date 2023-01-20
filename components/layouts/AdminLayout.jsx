@@ -1,7 +1,9 @@
 import Link from "next/link"
+import { useRouter } from "next/router";
 
 Link
 export default function AdminLayout({ children }) {
+
 
     return (
         <div className="flex w-screen h-screen">
