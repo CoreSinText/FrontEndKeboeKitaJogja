@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useState } from "react";
 import { useRouter } from 'next/router'
+import secureLocalStorage from "react-secure-storage";
 
 export default function Login() {
   const router = useRouter()
@@ -17,13 +18,8 @@ export default function Login() {
           password: `${password}`
         }
       })
-      let result = data.data
-      console.log(result);
-      localStorage.setItem("pemilik", data.data.pemilik)
-      console.log(localStorage.getItem("pemilik"));
-      if (localStorage.getItem("pemilik") === "0") {
-        await router.push("/admin/transaksi")
-      }
+
+      secureLocalStorage.setItem('user', data.data)
     } catch (error) {
 
     }
