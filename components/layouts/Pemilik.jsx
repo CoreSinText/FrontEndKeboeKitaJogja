@@ -34,7 +34,7 @@ export default function PemilikLayout({ children }) {
                 {/* Navigasi */}
                 <div className="flex flex-col w-full space-y-4">
 
-                    <Link href={"/pemilik/transaksi"} className='w-full bg-[#68B984] text-white px-6 text-lg py-4 font-bold'>
+                    <Link href={"/pemilik/data-transaksi"} className='w-full bg-[#68B984] text-white px-6 text-lg py-4 font-bold'>
                         Transaksi
                     </Link>
                     <Link href={"/pemilik/daftar-produk"} className='w-full bg-[#68B984] text-white px-6 text-lg py-4 font-bold'>
