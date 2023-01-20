@@ -4,7 +4,7 @@ import AdminLayout from "../../components/layouts/AdminLayout"
 export default function AdminTransaksi() {
     return (
         <AdminLayout>
-            <DataTransaksi />
+            <DataTransaksi link={'/admin/tambah-transaksi'} />
         </AdminLayout>
     )
 }

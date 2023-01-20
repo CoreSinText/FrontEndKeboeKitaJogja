@@ -5,7 +5,7 @@ import logoDelete from '../public/delete-icon.svg'
 import logoEdit from '../public/edit-icon.svg'
 import Image from "next/image";
 
-export default function DataProduk() {
+export default function DataProduk({ link }) {
     const [dataProduk, setDataProduk] = useState([]);
     const [produkDelete, setprodukDelete] = useState();
 
@@ -47,7 +47,7 @@ export default function DataProduk() {
             <h1 className="text-2xl font-bold">Data Produk</h1>
 
             <div className="w-full flex flex-col mt-10">
-                <Link href={'/admin/tambah-produk'} className="bg-[#285430] text-white font-bold w-fit px-5 py-2 rounded-lg">Tambah Data</Link>
+                <Link href={link} className="bg-[#285430] text-white font-bold w-fit px-5 py-2 rounded-lg">Tambah Data</Link>
 
                 {/* Table */}
                 <table className="mt-4">

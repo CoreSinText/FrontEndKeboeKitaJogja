@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 
 
-export default function DataStokBarang() {
+export default function DataStokBarang({ link }) {
     const [dataStokBarang, setdataStokBarang] = useState([]);
     useEffect(() => {
         async function fetchApi() {
@@ -33,7 +33,7 @@ export default function DataStokBarang() {
             <h1 className="text-2xl font-bold">Data Stok Barang</h1>
 
             <div className="w-full flex flex-col mt-10">
-                <Link href={'/admin/tambah-stok-barang'} className="bg-[#285430] text-white font-bold w-fit px-5 py-2 rounded-lg">Tambah Data</Link>
+                <Link href={link} className="bg-[#285430] text-white font-bold w-fit px-5 py-2 rounded-lg">Tambah Data</Link>
 
                 <table className="mt-4">
                     <thead>

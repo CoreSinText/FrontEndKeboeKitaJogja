@@ -4,7 +4,7 @@ import AdminLayout from "@/components/layouts/AdminLayout"
 export default function AdminStokBarang(params) {
     return (
         <AdminLayout>
-            <DataStokBarang />
+            <DataStokBarang link={'/admin/tambah-stok-barang'} />
         </AdminLayout>
     )
 }

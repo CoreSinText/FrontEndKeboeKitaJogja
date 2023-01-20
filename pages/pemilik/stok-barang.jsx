@@ -3,7 +3,7 @@ import DataStokBarang from "@/components/DataStokBarang"
 export default function DataStokBarangPemilik() {
     return (
         <PemilikLayout>
-            <DataStokBarang />
+            <DataStokBarang link={'/pemilik/tambah-stok-barang'} />
         </PemilikLayout>
     )
 }

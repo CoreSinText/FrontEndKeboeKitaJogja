@@ -7,6 +7,7 @@ import Image from "next/image";
 
 export default function AdminData() {
     const [dataAdmin, setdataAdmin] = useState([]);
+    let level
 
     useEffect(() => {
         async function fetch() {
@@ -17,6 +18,8 @@ export default function AdminData() {
             setdataAdmin(result.data)
         }
         fetch()
+
+
     }, [])
 
     return (

@@ -6,7 +6,7 @@ import AdminLayout from "@/components/layouts/AdminLayout"
 export default function AdminDaftarProduk() {
     return (
         <AdminLayout>
-            <DataProduk />
+            <DataProduk link={'/admin/tambah-produk'} />
         </AdminLayout>
     )
 }

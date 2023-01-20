@@ -3,7 +3,7 @@ import PemilikLayout from "@/components/layouts/Pemilik"
 export default function DataTransaksiPemilik() {
     return (
         <PemilikLayout>
-            <DataTransaksi />
+            <DataTransaksi link={'/pemilik/tambah-transaksi'} />
         </PemilikLayout>
     )
 }
