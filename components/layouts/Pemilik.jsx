@@ -15,6 +15,11 @@ export default function PemilikLayout({ children }) {
         }
     }, [])
 
+    function keluar() {
+        secureLocalStorage.removeItem('user')
+        router.push('/')
+    }
+
     return (
         <div className="flex w-screen h-screen">
 
@@ -42,7 +47,7 @@ export default function PemilikLayout({ children }) {
                         Data Admin
                     </Link>
                 </div>
-                <button className="bg-[#68B984] py-2 px-12 font-bold text-lg w-fit rounded-lg mx-auto mb-7 text-white">Keluar</button>
+                <button onClick={() => { keluar() }} className="bg-[#68B984] py-2 px-12 font-bold text-lg w-fit rounded-lg mx-auto mb-7 text-white">Keluar</button>
             </div>
             {children}
         </div>
