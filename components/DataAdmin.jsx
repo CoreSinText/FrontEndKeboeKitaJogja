@@ -24,10 +24,10 @@ export default function AdminData() {
 
     return (
         <div className="w-full px-10 pt-24">
-            <h1 className="text-2xl font-bold">Data Produk</h1>
+            <h1 className="text-2xl font-bold">Data Admin</h1>
 
             <div className="w-full flex flex-col mt-10">
-                <Link href={'/admin/tambah-produk'} className="bg-[#285430] text-white font-bold w-fit px-5 py-2 rounded-lg">Tambah Data</Link>
+                <Link href={'/pemilik/tambah-admin'} className="bg-[#285430] text-white font-bold w-fit px-5 py-2 rounded-lg">Tambah Data</Link>
 
                 {/* Table */}
                 <table className="mt-4">
