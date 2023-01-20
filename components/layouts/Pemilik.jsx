@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import secureLocalStorage from "react-secure-storage";
 export default function PemilikLayout({ children }) {
-    const regex = /^[\/]pemilik[\/a-z]{1,}/gm
     let router = useRouter()
     let level = parseInt(secureLocalStorage.getItem('user'))
 
