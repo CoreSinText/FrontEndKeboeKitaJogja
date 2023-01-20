@@ -1,10 +1,18 @@
 import Link from "next/link"
 import { useRouter } from "next/router";
-
-Link
+import { useEffect } from "react";
+import secureLocalStorage from "react-secure-storage";
 export default function AdminLayout({ children }) {
+    let router = useRouter()
+    let level = parseInt(secureLocalStorage.getItem('user'))
+    useEffect(() => {
 
-
+        if (level === 1) {
+            router.push('/pemilik/data-transaksi')
+        } else if (level === null) {
+            router.push('/')
+        }
+    }, [])
     return (
         <div className="flex w-screen h-screen">
 

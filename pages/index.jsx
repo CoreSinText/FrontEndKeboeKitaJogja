@@ -23,7 +23,7 @@ export default function Login() {
       } else if (data.data.pemilik === 1) {
         router.push('/pemilik/data-transaksi')
       }
-      secureLocalStorage.setItem('user', data.data)
+      secureLocalStorage.setItem('user', `${data.data.pemilik}`)
     } catch (error) {
 
     }

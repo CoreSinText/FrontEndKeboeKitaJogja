@@ -1,7 +1,20 @@
 import Link from "next/link"
-
-Link
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import secureLocalStorage from "react-secure-storage";
 export default function PemilikLayout({ children }) {
+    const regex = /^[\/]pemilik[\/a-z]{1,}/gm
+    let router = useRouter()
+    let level = parseInt(secureLocalStorage.getItem('user'))
+
+    useEffect(() => {
+
+        if (level === 0) {
+            router.push('/admin/transaksi')
+        } else if (level === null) {
+            router.push('/')
+        }
+    }, [])
 
     return (
         <div className="flex w-screen h-screen">
