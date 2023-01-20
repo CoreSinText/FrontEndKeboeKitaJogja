@@ -51,13 +51,15 @@ export default function DataProduk() {
 
                 {/* Table */}
                 <table className="mt-4">
-                    <tr>
-                        <th className="bg-[#285430] text-white">NO</th>
-                        <th className="bg-[#285430] text-white">Nama Produk</th>
-                        <th className="bg-[#285430] text-white">Stok</th>
-                        <th className="bg-[#285430] text-white">Tindakan</th>
+                    <thead>
+                        <tr>
+                            <th className="bg-[#285430] text-white">NO</th>
+                            <th className="bg-[#285430] text-white">Nama Produk</th>
+                            <th className="bg-[#285430] text-white">Stok</th>
+                            <th className="bg-[#285430] text-white">Tindakan</th>
 
-                    </tr>
+                        </tr>
+                    </thead>
                     <tbody>
                         {dataProduk.map((data, index) => {
                             let namaProduk = data.nama_produk

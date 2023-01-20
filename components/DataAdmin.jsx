@@ -28,14 +28,16 @@ export default function AdminData() {
 
                 {/* Table */}
                 <table className="mt-4">
-                    <tr>
-                        <th className="bg-[#285430] text-white">NO</th>
-                        <th className="bg-[#285430] text-white">Nama Admin</th>
-                        <th className="bg-[#285430] text-white">Jenis Kelamin</th>
-                        <th className="bg-[#285430] text-white">Nomor</th>
-                        <th className="bg-[#285430] text-white">Alamat</th>
-                        <th className="bg-[#285430] text-white">Tindakan</th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th className="bg-[#285430] text-white">NO</th>
+                            <th className="bg-[#285430] text-white">Nama Admin</th>
+                            <th className="bg-[#285430] text-white">Jenis Kelamin</th>
+                            <th className="bg-[#285430] text-white">Nomor</th>
+                            <th className="bg-[#285430] text-white">Alamat</th>
+                            <th className="bg-[#285430] text-white">Tindakan</th>
+                        </tr>
+                    </thead>
                     <tbody>
                         {dataAdmin.map((data, index) => {
                             let namaUser = data.nama_user

@@ -36,13 +36,15 @@ export default function DataStokBarang() {
                 <Link href={'/admin/tambah-stok-barang'} className="bg-[#285430] text-white font-bold w-fit px-5 py-2 rounded-lg">Tambah Data</Link>
 
                 <table className="mt-4">
-                    <tr>
-                        <th className="bg-[#285430] text-white">NO</th>
-                        <th className="bg-[#285430] text-white">Nama Produk</th>
-                        <th className="bg-[#285430] text-white">Stok</th>
+                    <thead>
+                        <tr>
+                            <th className="bg-[#285430] text-white">NO</th>
+                            <th className="bg-[#285430] text-white">Nama Produk</th>
+                            <th className="bg-[#285430] text-white">Stok</th>
 
 
-                    </tr>
+                        </tr>
+                    </thead>
                     <tbody>
                         {dataStokBarang.map((data, index) => {
                             let namaProduk = data.nama_produk

@@ -49,15 +49,17 @@ export default function DataTransaksi() {
                 <Link href={'/admin/tambah-transaksi'} className="bg-[#285430] text-white font-bold w-fit px-5 py-2 rounded-lg">Tambah Data</Link>
 
                 <table className="mt-4">
-                    <tr>
-                        <th className="bg-[#285430] text-white">NO</th>
-                        <th className="bg-[#285430] text-white">Nama Pembeli</th>
-                        <th className="bg-[#285430] text-white">Tanggal</th>
-                        <th className="bg-[#285430] text-white">Produk</th>
-                        <th className="bg-[#285430] text-white">Jumlah</th>
-                        <th className="bg-[#285430] text-white">Total</th>
-                        <th className="bg-[#285430] text-white">Tindakan</th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th className="bg-[#285430] text-white">NO</th>
+                            <th className="bg-[#285430] text-white">Nama Pembeli</th>
+                            <th className="bg-[#285430] text-white">Tanggal</th>
+                            <th className="bg-[#285430] text-white">Produk</th>
+                            <th className="bg-[#285430] text-white">Jumlah</th>
+                            <th className="bg-[#285430] text-white">Total</th>
+                            <th className="bg-[#285430] text-white">Tindakan</th>
+                        </tr>
+                    </thead>
                     <tbody>
 
                         {dataPenjualan.map((data, index) => {
