@@ -36,25 +36,26 @@ export default function AdminData() {
                         <th className="bg-[#285430] text-white">Alamat</th>
                         <th className="bg-[#285430] text-white">Tindakan</th>
                     </tr>
-                    {dataAdmin.map((data, index) => {
-                        let namaUser = data.nama_user
-                        let Jk = data.jenis_kelamin
-                        let noHp = data.nomor_telepon
-                        let alamat = data.alamat
-                        return (
-                            <tr key={index} className="odd:bg-slate-200">
-                                <td className="w-24">{index + 1}</td>
-                                <td>{namaUser}</td>
-                                <td>{Jk}</td>
-                                <td>{noHp}</td>
-                                <td>{alamat}</td>
-                                <td className="flex w-32 mx-auto justify-center">
-                                    <Image src={logoDelete} alt="logo-delete" className="w-8 cursor-pointer" />
-                                </td>
-                            </tr>
-                        )
-                    })}
-
+                    <tbody>
+                        {dataAdmin.map((data, index) => {
+                            let namaUser = data.nama_user
+                            let Jk = data.jenis_kelamin
+                            let noHp = data.nomor_telepon
+                            let alamat = data.alamat
+                            return (
+                                <tr key={index} className="odd:bg-slate-200">
+                                    <td className="w-24">{index + 1}</td>
+                                    <td>{namaUser}</td>
+                                    <td>{Jk}</td>
+                                    <td>{noHp}</td>
+                                    <td>{alamat}</td>
+                                    <td className="flex w-32 mx-auto justify-center">
+                                        <Image src={logoDelete} alt="logo-delete" className="w-8 cursor-pointer" />
+                                    </td>
+                                </tr>
+                            )
+                        })}
+                    </tbody>
                 </table>
             </div>
         </div>

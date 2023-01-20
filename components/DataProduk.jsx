@@ -58,21 +58,23 @@ export default function DataProduk() {
                         <th className="bg-[#285430] text-white">Tindakan</th>
 
                     </tr>
-                    {dataProduk.map((data, index) => {
-                        let namaProduk = data.nama_produk
-                        let hargaProduk = data.harga_produk
-                        let key = data.produk_id
-                        return (
-                            <tr key={key} className="odd:bg-slate-200">
-                                <td className="w-24">{index + 1}</td>
-                                <td>{namaProduk}</td>
-                                <td>{hargaProduk}</td>
-                                <td className="flex w-32 mx-auto justify-center">
-                                    <Image onClick={() => { deleteProduk(key) }} src={logoDelete} alt="logo-delete" className="w-8 cursor-pointer" />
-                                </td>
-                            </tr>
-                        )
-                    })}
+                    <tbody>
+                        {dataProduk.map((data, index) => {
+                            let namaProduk = data.nama_produk
+                            let hargaProduk = data.harga_produk
+                            let key = data.produk_id
+                            return (
+                                <tr key={key} className="odd:bg-slate-200">
+                                    <td className="w-24">{index + 1}</td>
+                                    <td>{namaProduk}</td>
+                                    <td>{hargaProduk}</td>
+                                    <td className="flex w-32 mx-auto justify-center">
+                                        <Image onClick={() => { deleteProduk(key) }} src={logoDelete} alt="logo-delete" className="w-8 cursor-pointer" />
+                                    </td>
+                                </tr>
+                            )
+                        })}
+                    </tbody>
                 </table>
             </div>
         </div>

@@ -58,34 +58,36 @@ export default function DataTransaksi() {
                         <th className="bg-[#285430] text-white">Total</th>
                         <th className="bg-[#285430] text-white">Tindakan</th>
                     </tr>
+                    <tbody>
 
-                    {dataPenjualan.map((data, index) => {
-                        let id = data.transaksi_id
-                        let namaPembeli = data.nama_pembeli
-                        let tanggal = data.tanggal
-                        let jumlah = data.jumlah_pembelian
-                        let namaProduk = data.nama_produk
-                        let totalTransaksi = data.total_transaksi
-                        const date = new Date(tanggal)
-                        const styleDate = {
-                            year: "numeric",
-                            month: "long",
-                            day: "numeric",
-                        };
-                        return (
-                            <tr key={id} className="odd:bg-slate-200">
-                                <td className="w-24">{index + 1}</td>
-                                <td>{namaPembeli}</td>
-                                <td>{date.toLocaleDateString("id", styleDate)}</td>
-                                <td>{namaProduk}</td>
-                                <td>{jumlah}</td>
-                                <td>{totalTransaksi}</td>
-                                <td className="flex justify-center">
-                                    <Image onClick={() => { deleteTransaksi(id) }} src={logoDelete} alt={'logo-delete'} className="w-8 cursor-pointer" />
-                                </td>
-                            </tr>
-                        )
-                    })}
+                        {dataPenjualan.map((data, index) => {
+                            let id = data.transaksi_id
+                            let namaPembeli = data.nama_pembeli
+                            let tanggal = data.tanggal
+                            let jumlah = data.jumlah_pembelian
+                            let namaProduk = data.nama_produk
+                            let totalTransaksi = data.total_transaksi
+                            const date = new Date(tanggal)
+                            const styleDate = {
+                                year: "numeric",
+                                month: "long",
+                                day: "numeric",
+                            };
+                            return (
+                                <tr key={id} className="odd:bg-slate-200">
+                                    <td className="w-24">{index + 1}</td>
+                                    <td>{namaPembeli}</td>
+                                    <td>{date.toLocaleDateString("id", styleDate)}</td>
+                                    <td>{namaProduk}</td>
+                                    <td>{jumlah}</td>
+                                    <td>{totalTransaksi}</td>
+                                    <td className="flex justify-center">
+                                        <Image onClick={() => { deleteTransaksi(id) }} src={logoDelete} alt={'logo-delete'} className="w-8 cursor-pointer" />
+                                    </td>
+                                </tr>
+                            )
+                        })}
+                    </tbody>
                 </table>
             </div>
         </div>

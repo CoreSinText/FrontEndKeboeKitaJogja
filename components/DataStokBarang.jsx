@@ -43,17 +43,19 @@ export default function DataStokBarang() {
 
 
                     </tr>
-                    {dataStokBarang.map((data, index) => {
-                        let namaProduk = data.nama_produk
-                        let stokBarang = data.ketersediaan_barang
-                        return (
-                            <tr key={index} className="odd:bg-slate-200">
-                                <td className="w-24 text-center">{index + 1}</td>
-                                <td className="text-center">{namaProduk}</td>
-                                <td className="text-center">{stokBarang}</td>
-                            </tr>
-                        )
-                    })}
+                    <tbody>
+                        {dataStokBarang.map((data, index) => {
+                            let namaProduk = data.nama_produk
+                            let stokBarang = data.ketersediaan_barang
+                            return (
+                                <tr key={index} className="odd:bg-slate-200">
+                                    <td className="w-24 text-center">{index + 1}</td>
+                                    <td className="text-center">{namaProduk}</td>
+                                    <td className="text-center">{stokBarang}</td>
+                                </tr>
+                            )
+                        })}
+                    </tbody>
                 </table>
             </div>
         </div>
