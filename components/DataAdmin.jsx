@@ -4,10 +4,11 @@ import { useEffect, useState } from "react";
 import logoDelete from '../public/delete-icon.svg'
 import logoEdit from '../public/edit-icon.svg'
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 export default function AdminData() {
+    const router = useRouter()
     const [dataAdmin, setdataAdmin] = useState([]);
-
 
     async function fetch() {
         let result = await axios({
@@ -32,6 +33,9 @@ export default function AdminData() {
         fetch()
     }
 
+    function ubahAdmin(id) {
+        router.push(`/pemilik/ubah-admin/?id=${id}`)
+    }
     return (
         <div className="w-full px-10 pt-24">
             <h1 className="text-2xl font-bold">Data Admin</h1>
@@ -66,7 +70,7 @@ export default function AdminData() {
                                     <td className="p-1">{alamat}</td>
                                     <td className="flex w-32 mx-auto justify-center space-x-4">
                                         <Image onClick={() => { deleteAdmin(data.user_id) }} src={logoDelete} alt="logo-delete" className="w-8 cursor-pointer" />
-                                        <Image src={logoEdit} alt='logo-edit' className="w-8 cursor-pointer" />
+                                        <Image onClick={() => ubahAdmin(data.user_id)} src={logoEdit} alt='logo-edit' className="w-8 cursor-pointer" />
                                     </td>
                                 </tr>
                             )
