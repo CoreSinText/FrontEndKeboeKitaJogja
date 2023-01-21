@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function AdminData() {
     const [dataAdmin, setdataAdmin] = useState([]);
-    let level
+    const [idAdmin, setidAdmin] = useState();
 
     useEffect(() => {
         async function fetch() {
@@ -18,9 +18,17 @@ export default function AdminData() {
             setdataAdmin(result.data)
         }
         fetch()
-
-
     }, [])
+
+    async function deleteAdmin(id) {
+        await axios({
+            method: "delete",
+            url: 'http://localhost:8000/admin/hapus',
+            data: {
+                idAdmin: `${idAdmin}`
+            }
+        })
+    }
 
     return (
         <div className="w-full px-10 pt-24">
@@ -50,12 +58,13 @@ export default function AdminData() {
                             return (
                                 <tr key={index} className="odd:bg-slate-200">
                                     <td className="w-24">{index + 1}</td>
-                                    <td>{namaUser}</td>
-                                    <td>{Jk}</td>
-                                    <td>{noHp}</td>
-                                    <td>{alamat}</td>
-                                    <td className="flex w-32 mx-auto justify-center">
-                                        <Image src={logoDelete} alt="logo-delete" className="w-8 cursor-pointer" />
+                                    <td className="p-1">{namaUser}</td>
+                                    <td className="p-1">{Jk}</td>
+                                    <td className="p-1">{noHp}</td>
+                                    <td className="p-1">{alamat}</td>
+                                    <td className="flex w-32 mx-auto justify-center space-x-4">
+                                        <Image onClick={() => { deleteAdmin(data.user_id) }} src={logoDelete} alt="logo-delete" className="w-8 cursor-pointer" />
+                                        <Image src={logoEdit} alt='logo-edit' className="w-8 cursor-pointer" />
                                     </td>
                                 </tr>
                             )
