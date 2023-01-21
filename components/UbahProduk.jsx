@@ -38,7 +38,7 @@ export default function UbahProduk() {
 
     async function kirimData() {
         await axios({
-            method: 'post',
+            method: 'put',
             url: 'http://localhost:8000/produk/ubah',
             data: {
                 produkId: `${idProduk}`,
