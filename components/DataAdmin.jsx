@@ -7,16 +7,17 @@ import Image from "next/image";
 
 export default function AdminData() {
     const [dataAdmin, setdataAdmin] = useState([]);
-    const [idAdmin, setidAdmin] = useState();
+
+
+    async function fetch() {
+        let result = await axios({
+            method: "get",
+            url: "http://localhost:8000/admin"
+        })
+        setdataAdmin(result.data)
+    }
 
     useEffect(() => {
-        async function fetch() {
-            let result = await axios({
-                method: "get",
-                url: "http://localhost:8000/admin"
-            })
-            setdataAdmin(result.data)
-        }
         fetch()
     }, [])
 
@@ -25,9 +26,10 @@ export default function AdminData() {
             method: "delete",
             url: 'http://localhost:8000/admin/hapus',
             data: {
-                idAdmin: `${idAdmin}`
+                idAdmin: `${id}`
             }
         })
+        fetch()
     }
 
     return (
