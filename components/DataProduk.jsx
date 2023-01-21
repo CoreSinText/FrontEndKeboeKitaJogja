@@ -1,13 +1,19 @@
 import axios from "axios"
 import Link from "next/link"
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import logoDelete from '../public/delete-icon.svg'
 import logoEdit from '../public/edit-icon.svg'
 import Image from "next/image";
+import secureLocalStorage from "react-secure-storage";
 
 export default function DataProduk({ link }) {
+    const router = useRouter()
     const [dataProduk, setDataProduk] = useState([]);
     const [produkDelete, setprodukDelete] = useState();
+    const [idProduk, setidProduk] = useState();
+    let levelUser = parseInt(secureLocalStorage.getItem('user'))
+
 
     useEffect(() => {
         async function fetchApi() {
@@ -42,6 +48,18 @@ export default function DataProduk({ link }) {
             }
         })
     }
+
+    function editProduk(key) {
+        setidProduk(key)
+        if (levelUser === 0) {
+            router.push(`/admin/ubah-produk?id=${key}`)
+        } else if (levelUser === 1) {
+            router.push(`/admin/ubah-produk?id=${key}`)
+
+        }
+
+
+    }
     return (
         <div className="w-full px-10 pt-24">
             <h1 className="text-2xl font-bold">Data Produk</h1>
@@ -70,8 +88,9 @@ export default function DataProduk({ link }) {
                                     <td className="w-24">{index + 1}</td>
                                     <td>{namaProduk}</td>
                                     <td>{hargaProduk}</td>
-                                    <td className="flex w-32 mx-auto justify-center">
+                                    <td className="flex space-x-2 w-32 mx-auto justify-center">
                                         <Image onClick={() => { deleteProduk(key) }} src={logoDelete} alt="logo-delete" className="w-8 cursor-pointer" />
+                                        <Image onClick={() => { editProduk(key) }} src={logoEdit} alt='logo-edit' className="w-8 cursor-pointer" />
                                     </td>
                                 </tr>
                             )
