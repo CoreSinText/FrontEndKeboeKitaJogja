@@ -1,9 +1,53 @@
+import axios from "axios";
 import Link from "next/link"
+import { useRouter } from "next/router";
 import { useState, useEffect } from "react"
 export default function UbahProduk() {
     const [namaProduk, setnamaProduk] = useState('');
     const [hargaBarang, sethargaBarang] = useState('');
+    const [idProduk, setidProduk] = useState('');
+
     const [buttonDisable, setbuttonDisable] = useState(true);
+    const router = useRouter()
+
+    useEffect(() => {
+        let idQuery = router.query.id
+        try {
+            async function fetchApi() {
+                let data = await axios({
+                    method: "get",
+                    url: `http://localhost:8000/produk/cari/?id=${idQuery}`,
+                })
+                setnamaProduk(data.data.nama_produk)
+                sethargaBarang(data.data.harga_produk)
+                setidProduk(data.data.produk_id)
+            }
+            fetchApi()
+        } catch (err) {
+        }
+    }, [])
+
+    useEffect(() => {
+        if (namaProduk.length == 0 || hargaBarang == 0) {
+            setbuttonDisable(true)
+        } else {
+            setbuttonDisable(false)
+        }
+    }, [namaProduk, hargaBarang])
+
+
+    async function kirimData() {
+        await axios({
+            method: 'post',
+            url: 'http://localhost:8000/produk/ubah',
+            data: {
+                produkId: `${idProduk}`,
+                namaProduk: `${namaProduk}`,
+                harga: `${hargaBarang}`
+
+            }
+        })
+    }
     return (
         <div className="w-full px-10 pt-24">
             <h1 className="text-2xl font-bold">Tambah Produk</h1>
