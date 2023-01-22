@@ -50,7 +50,7 @@ export default function UbahProduk() {
     }
     return (
         <div className="w-full px-10 pt-24">
-            <h1 className="text-2xl font-bold">Tambah Produk</h1>
+            <h1 className="text-2xl font-bold">Edit Produk</h1>
 
             <div className="w-full flex flex-col mt-10">
                 <Link href={'/admin/daftar-produk'} className="bg-[#285430] text-white font-bold w-fit px-5 py-2 rounded-lg">Data Produk</Link>
