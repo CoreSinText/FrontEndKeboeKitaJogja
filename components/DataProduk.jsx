@@ -73,7 +73,7 @@ export default function DataProduk({ link }) {
                         <tr>
                             <th className="bg-[#285430] text-white">NO</th>
                             <th className="bg-[#285430] text-white">Nama Produk</th>
-                            <th className="bg-[#285430] text-white">Stok</th>
+                            <th className="bg-[#285430] text-white">Harga</th>
                             <th className="bg-[#285430] text-white">Tindakan</th>
 
                         </tr>

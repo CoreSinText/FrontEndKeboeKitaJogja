@@ -8,7 +8,6 @@ export default function TambahAdmin() {
     const [nomorHp, setnomorHp] = useState('');
     const [passwordUser, setpasswordUser] = useState('');
     const [alamatUser, setalamatUser] = useState('');
-    console.log(jenisKelamin);
     useEffect(() => {
         if (namaUser <= 0 || jenisKelamin <= 0 || nomorHp <= 0 || alamatUser <= 0 || passwordUser <= 0) {
             setbuttonDisable(true)
