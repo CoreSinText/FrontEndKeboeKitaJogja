@@ -1,12 +1,13 @@
 import axios from "axios"
 import Link from "next/link"
 import { useEffect, useState } from "react";
+import secureLocalStorage from "react-secure-storage";
 export default function TambahStokBarang() {
     const [stokSebelumnya, setstokSebelumnya] = useState();
     const [tambahStok, settambahStok] = useState();
     const [dataBarang, setdataBarang] = useState([]);
     const [idProduk, setidProduk] = useState();
-
+    let level = parseInt(secureLocalStorage.getItem('user'))
 
 
     useEffect(() => {
@@ -15,11 +16,8 @@ export default function TambahStokBarang() {
                 method: "get",
                 url: "http://localhost:8000/produk"
             })
-
             setdataBarang(req.data)
         }
-
-
         fetchApi()
     }, [])
 
@@ -53,7 +51,7 @@ export default function TambahStokBarang() {
             <h1 className="text-2xl font-bold">Tambah Stok Barang</h1>
 
             <div className="w-full flex flex-col mt-10">
-                <Link href={'/admin/stok-barang'} className="bg-[#285430] text-white font-bold w-fit px-5 py-2 rounded-lg">Data StokBarang</Link>
+                <Link href={level === 0 ? '/admin/stok-barang' : '/pemilik/stok-barang'} className="bg-[#285430] text-white font-bold w-fit px-5 py-2 rounded-lg">Data StokBarang</Link>
 
                 <div className="mt-4 bg-[#285430] rounded-lg w-[770px] h-[413px] mx-auto flex flex-col justify-evenly">
 
@@ -62,6 +60,7 @@ export default function TambahStokBarang() {
                         <div className="flex space-x-6 items-center w-full">
                             <h2 className="text-white w-36">Nama Produk</h2>
                             <select className="py-2 rounded-lg px-4 w-72">
+                                <option value=""> Pilih Nama Produk</option>
                                 {dataBarang.map((data, index) => {
                                     return (
                                         <option key={index} onClick={() => { klikBarang(data.produk_id) }}>{data.nama_produk}</option>
