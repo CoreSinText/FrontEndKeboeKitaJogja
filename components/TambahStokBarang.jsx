@@ -4,9 +4,11 @@ import { useEffect, useState } from "react";
 import secureLocalStorage from "react-secure-storage";
 export default function TambahStokBarang() {
     const [stokSebelumnya, setstokSebelumnya] = useState();
-    const [tambahStok, settambahStok] = useState();
+    const [tambahStok, settambahStok] = useState('');
     const [dataBarang, setdataBarang] = useState([]);
-    const [idProduk, setidProduk] = useState();
+    const [idProduk, setidProduk] = useState('');
+    const [disableButton, setdisableButton] = useState(true);
+
     let level = parseInt(secureLocalStorage.getItem('user'))
 
 
@@ -20,6 +22,14 @@ export default function TambahStokBarang() {
         }
         fetchApi()
     }, [])
+
+    useEffect(() => {
+        if (idProduk.length === 0 || tambahStok.length === 0) {
+            setdisableButton(true)
+        } else {
+            setdisableButton(false)
+        }
+    }, [idProduk, tambahStok])
 
     async function klikBarang(id) {
         let reqProdukSebelumnya = await axios({
@@ -76,7 +86,7 @@ export default function TambahStokBarang() {
 
 
                     </form>
-                    <button onClick={() => { kirimData() }} className="bg-[#68B984] px-7 py-3 w-fit rounded-lg text-white self-end mx-10">Simpan</button>
+                    <button disabled={disableButton} onClick={() => { kirimData() }} className={`${disableButton ? 'bg-red-400' : 'bg-[#68B984]'} px-7 py-3 w-fit rounded-lg text-white self-end mx-10`}>Simpan</button>
                 </div>
             </div>
         </div>
