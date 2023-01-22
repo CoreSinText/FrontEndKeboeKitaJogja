@@ -54,7 +54,7 @@ export default function DataProduk({ link }) {
         if (levelUser === 0) {
             router.push(`/admin/ubah-produk?id=${key}`)
         } else if (levelUser === 1) {
-            router.push(`/admin/ubah-produk?id=${key}`)
+            router.push(`/pemilik/ubah-produk?id=${key}`)
 
         }
 
